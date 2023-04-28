@@ -1,26 +1,31 @@
-// Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero. Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-// il prezzo del biglietto è definito in base ai km (0.21 € al km)
-// va applicato uno sconto del 20% per i minorenni
-// va applicato uno sconto del 40% per gli over 65.
-// L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
+// Var dichiarate
+const kmPrezzo = 0.21;
+let discount;
 
+// Chiedere distanza da percorrere in km all'utente
+const distanza = parseint(prompt("inserisci la distanza che vuoi percorrere in (km)"));
 
+// Chiedere età all'utente
 
-// chiedere all'utente il numero di chilometri
-let numeroChilometri = prompt("inserisci il numero dei km");
-console.log(numeroChilometri)
+const utenteEtà = parseInt(prompt("Inserisci la tua età"));
 
-// chiedere all'utente la sua età
-let etàUtente = prompt("inserisci la tua età");
-console.log(etàUtente)
+// Condizioni per lo sconto
+if(utenteEtà < 18){
+  discount = 0.2;
 
-// calcolare il prezzo del biglietto
-// il prezzo del biglietto è definito in base ai km
+}else if(utenteEtà >= 65){
+  discount = 0.4;
+}else{
+  discount = 0;
+}
 
-// va applicato uno sconto del 20% per i minorenni
+// Calcolare il prezzo del biglietto con i possibili sconti
+const amount = (distanza * kmPrezzo);
+const costoBiglietto = amount - (amount * discount);
 
-// va applicato uno sconto del 40% per gli over 65
-
-// prezzo finale
+// Inner Html e somma da pagare
+document.getElementById("età").innerHTML = utenteEtà;
+document.getElementById("distanza").innerHTML = distanza;
+document.getElementById("ticket_price").innerHTML = costoBiglietto.toFixed(2)
 
 
