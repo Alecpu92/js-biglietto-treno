@@ -3,11 +3,12 @@ const kmPrezzo = 0.21;
 let discount;
 
 // Chiedere distanza da percorrere in km all'utente
-const distanza = parseint(prompt("inserisci la distanza che vuoi percorrere in (km)"));
+var distanza = (prompt("inserisci la distanza che vuoi percorrere in (km)"));
+
 
 // Chiedere età all'utente
 
-const utenteEtà = parseInt(prompt("Inserisci la tua età"));
+var utenteEtà = (prompt("Inserisci la tua età"));
 
 // Condizioni per lo sconto
 if(utenteEtà < 18){
